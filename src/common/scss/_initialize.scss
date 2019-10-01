@@ -1,0 +1,129 @@
+/*一些常用到的公共css*/
+
+
+
+/*文字*/
+@each $name,$size,$color in
+(lg,$uni-font-size-lg,$uni-text-color),
+(base,$uni-font-size-base,$uni-text-color),
+(sm,$uni-font-size-sm,$uni-text-color-grey),
+(title,$uni-font-size-title,$uni-color-title),
+(subtitle,$uni-font-size-subtitle,$uni-color-subtitle),
+(paragraph,$uni-font-size-paragraph,$uni-color-paragraph)
+{
+  .text-#{$name}{
+    color: $color;
+    font-size: $size;
+    word-wrap: break-word;
+    word-break: break-all;
+  }
+}
+/*字体颜色*/
+@each $name,$color in
+(default,$uni-text-color),
+(greys,$uni-text-color-grey),
+(inverse,$uni-text-color-inverse),
+(disable,$uni-text-color-disable),
+(placeholder,$uni-text-color-placeholder),
+(primary,$uni-color-primary),
+(success,$uni-color-success),
+(warning,$uni-color-warning),
+(error,$uni-color-error){
+    .c-#{$name}{
+        color:$color;
+    }
+}
+//背景颜色
+@each $name,$color in
+(default,$uni-bg-color),
+(mask,$uni-bg-color-mask),
+(greys,$uni-bg-color-grey),
+(hover,$uni-bg-color-hover),
+(primary,$uni-color-primary),
+(success,$uni-color-success),
+(warning,$uni-color-warning),
+(error,$uni-color-error){
+    .b-#{$name}{
+        background-color:$color;
+    }
+}
+
+//文字垂直对齐方式
+@each $name,$align in (m,middle),(t,top),(t-top,text-top){
+    .va-#{$name}{
+        vertical-align:$align
+    }
+}
+
+/*文字水平对齐方向*/
+@each $name,$align in (c,center),(r,right){
+    .ta-#{$name}{
+        text-align:$align
+    }
+}
+/*文字行高*/
+@each $name,$num in (1,1.1),(2,1.2),(3,1.3),(4,1.4),(5,1.5){
+    .line-h-#{$name}{
+        line-height:$num
+    }
+}
+// 水平外边距, 内边距
+@each $name,$spacing in
+(sm,$uni-spacing-row-sm),
+(base,$uni-spacing-row-base),
+(lg,$uni-spacing-row-lg){
+    .m-row-#{$name}{
+        margin: 0 $spacing;
+    }
+    .m-row-l-#{$name}{
+        margin-left: $spacing;
+    }
+    .m-row-r-#{$name}{
+        margin-right: $spacing;
+    }
+    .p-row-#{$name}{
+        padding: 0 $spacing;
+    }
+    .p-row-l-#{$name}{
+        padding-left: $spacing;
+    }
+    .p-row-r-#{$name}{
+        padding-right: $spacing;
+    }
+}
+// 垂直外边距, 内边距
+@each $name,$spacing in
+(sm,$uni-spacing-col-sm),
+(base,$uni-spacing-col-base),
+(lg,$uni-spacing-col-lg){
+    .m-col-#{$name}{
+        margin: $spacing 0;
+    }
+    .m-col-l-#{$name}{
+        margin-top: $spacing;
+    }
+    .m-col-r-#{$name}{
+        margin-bottom: $spacing;
+    }
+    .p-col-#{$name}{
+        padding: 0 $spacing;
+    }
+    .p-col-l-#{$name}{
+        padding-top: $spacing;
+    }
+    .p-col-r-#{$name}{
+        padding-bottom: $spacing;
+    }
+}
+// 文本超过三行省略
+.t-ellipsis-3{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}
+
+//页面默认设置
+.page{
+    padding: $uni-spacing-col-lg $uni-spacing-row-lg;
+}

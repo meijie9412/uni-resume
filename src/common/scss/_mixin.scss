@@ -1,0 +1,18 @@
+/**
+常用混合指令
+*/
+//设置背景图片
+@mixin background($url,$position:center,$size:contain){
+    background: url($url) no-repeat $position center;
+    background-size:$size ;
+}
+
+//设置全屏居中显示
+@mixin position($position,$top:0,$right:0,$bottom:0,$left:0){
+    position: $position;
+    top:$top;
+    left:$left;
+    right:$right;
+    bottom: $bottom;
+    margin: auto;
+}
